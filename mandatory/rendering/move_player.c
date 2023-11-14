@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: abouram <abouram@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 01:34:34 by abouram           #+#    #+#             */
-/*   Updated: 2023/11/14 11:02:51 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/11/14 22:02:45 by abouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,23 @@ void	is_awall(t_data *data, double newx, double newy)
 void	move_player_c(t_data *data, int keycode, double newx, double newy)
 {
 	fix_r_angle(data);
-	if (keycode == 123)
+	if (keycode == 0)
 	{
 		newx = data->call->new_x + (MOVESPEED * cos(data->call->retation_angle
 					- M_PI / 2));
 		newy = data->call->new_y + (MOVESPEED * sin(data->call->retation_angle
 					- M_PI / 2));
-		is_awall(data, newx, newy);
-	}
-	if (keycode == 124)
-	{
-		newx = data->call->new_x + (MOVESPEED * cos(data->call->retation_angle
-					+ M_PI / 2));
-		newy = data->call->new_y + (MOVESPEED * sin(data->call->retation_angle
-					+ M_PI / 2));
 		is_awall(data, newx, newy);
 	}
 	if (keycode == 2)
+	{
+		newx = data->call->new_x + (MOVESPEED * cos(data->call->retation_angle
+					+ M_PI / 2));
+		newy = data->call->new_y + (MOVESPEED * sin(data->call->retation_angle
+					+ M_PI / 2));
+		is_awall(data, newx, newy);
+	}
+	if (keycode == 124)
 	{
 		data->call->retation_angle += ROTATION;
 		draw_player(data, data->call->new_y, data->call->new_x);
@@ -70,7 +70,7 @@ void	move_player(t_data *data, int keycode)
 				* sin(data->call->retation_angle));
 		is_awall(data, data->newx, data->newy);
 	}
-	if (keycode == 0)
+	if (keycode == 123)
 	{
 		data->call->retation_angle -= ROTATION;
 		draw_player(data, data->call->new_y, data->call->new_x);

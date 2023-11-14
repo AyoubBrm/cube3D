@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: abouram <abouram@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 23:17:20 by shmimi            #+#    #+#             */
-/*   Updated: 2023/11/14 12:07:59 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/11/14 22:53:17 by abouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,7 @@ void	check_valid_path4(t_parse_map *essentials, int i, char starting_pos)
 				|| essentials->dummy_map[i][m + 1] == ' '
 				|| essentials->dummy_map[i - 1][m] == ' '))
 		{
-			ft_putstr_fd("Error: invalid maps!\n", 2);
-			printf("|%c| %d %d\n", essentials->dummy_map[i][m], i, m);
+			ft_putstr_fd("Error: invalid map!\n", 2);
 			free2d(essentials->map);
 			free2d(essentials->duplicates);
 			free2d(essentials->dummy_map);

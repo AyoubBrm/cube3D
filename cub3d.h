@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: abouram <abouram@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:28:47 by shmimi            #+#    #+#             */
-/*   Updated: 2023/11/14 21:43:08 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/11/14 22:31:51 by abouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define HEIGHT 3
 # define MOVESPEED 1.2
 # define ROTATION 0.0698132
-# define WIDTH_SCREEN 2550
+# define WIDTH_SCREEN 2000
 # define HEIGHT_SCREEN 1000
 
 typedef struct s_parse_map

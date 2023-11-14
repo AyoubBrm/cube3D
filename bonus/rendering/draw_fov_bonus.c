@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_fov_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: abouram <abouram@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:07:04 by abouram           #+#    #+#             */
-/*   Updated: 2023/11/14 21:11:20 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/11/14 22:21:49 by abouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,4 +133,6 @@ void	draw_fov_line(t_data *data)
 		render_textures(data, &textures, &x_offset, &y_offset);
 		data->i++;
 	}
+	print_map(data);
+	print_rays(data);
 }

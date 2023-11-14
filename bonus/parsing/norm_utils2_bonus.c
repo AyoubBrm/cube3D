@@ -3,19 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   norm_utils2_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: abouram <abouram@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:31:01 by shmimi            #+#    #+#             */
-/*   Updated: 2023/11/14 12:03:51 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/11/14 23:01:14 by abouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../cub3d.h"
 
-void	skip_newline(int fd, char **line)
+void	skip_newline(int fd, char **line, t_parse_map *essentials)
 {
-	while (*line && ft_strncmp(*line, "\n", 2) == 0)
+	while (*line)
 	{
+		if (ft_strncmp(*line, "\n", 2) == 0)
+		{
+			ft_putstr_fd("Error: \"\\n\" detected in between!\n", 2);
+			free(*line);
+			free2d(essentials->map);
+			free2d(essentials->duplicates);
+			exit(1);
+		}
 		if (*line[0] == '1' || *line[0] == ' ')
 			return ;
 		free(*line);
@@ -25,7 +33,7 @@ void	skip_newline(int fd, char **line)
 
 void	check_empty_lines2(t_parse_map *essentials, char *line, int fd)
 {
-	skip_newline(fd, &line);
+	skip_newline(fd, &line, essentials);
 	while (line)
 	{
 		if (line[0] == '1' || line[0] == ' ')
