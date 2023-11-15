@@ -6,7 +6,7 @@
 /*   By: abouram <abouram@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 21:31:25 by shmimi            #+#    #+#             */
-/*   Updated: 2023/11/14 22:31:20 by abouram          ###   ########.fr       */
+/*   Updated: 2023/11/15 01:47:07 by abouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	mouse_move(int x, int y, void *param)
 	if (x > WIDTH_SCREEN || x < 0 || y < 0 || y > HEIGHT_SCREEN)
 		return (0);
 	i = x - data->call->x_mouse;
-	data->call->retation_angle += i * 0.0009;
+	data->call->retation_angle += i * 0.004;
 	print_round(data);
 	print_map(data);
 	draw_fov_line(data);

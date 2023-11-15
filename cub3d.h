@@ -6,7 +6,7 @@
 /*   By: abouram <abouram@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:28:47 by shmimi            #+#    #+#             */
-/*   Updated: 2023/11/14 22:31:51 by abouram          ###   ########.fr       */
+/*   Updated: 2023/11/15 01:41:25 by abouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define WIDTH 3
-# define HEIGHT 3
+# define WIDTH  5
+# define HEIGHT 5
 # define MOVESPEED 1.2
 # define ROTATION 0.0698132
 # define WIDTH_SCREEN 2000

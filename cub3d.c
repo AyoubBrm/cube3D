@@ -6,7 +6,7 @@
 /*   By: abouram <abouram@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:28:34 by shmimi            #+#    #+#             */
-/*   Updated: 2023/11/14 22:14:41 by abouram          ###   ########.fr       */
+/*   Updated: 2023/11/15 01:45:06 by abouram          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	move(int keycode, void *par)
 	if (keycode == 53)
 		close_window(keycode, data);
 	draw_fov_line(data);
+	mlx_hook(data->win, 6, 0L, mouse_move, data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 	return (0);
 }
